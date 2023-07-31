@@ -37,7 +37,7 @@ qa_chain = RetrievalQA.from_chain_type(
     return_source_documents=True
 )
 
-df = pd.read_csv(CSV_PATH)
+df = pd.read_csv(CSV_PATH, dtype=str)
 
 
 def ask_questions(question: str):

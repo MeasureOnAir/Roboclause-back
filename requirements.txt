@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+openai
+langchain==0.0.247
+chromadb
+tiktoken
+pandas

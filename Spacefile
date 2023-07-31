@@ -1,0 +1,10 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: Roboclause
+    src: .
+    engine: python3.9
+    primary: true
+    run: export OPENAI_API_KEY=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; uvicorn main:app
+    dev: venv/bin/uvicorn main:app --reload
+    public: true

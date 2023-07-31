@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+import uvicorn
+
 from app.route import chat
 
 app = FastAPI()
@@ -27,3 +29,6 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {"message": "Welcome to Roboclause!", "status": "🟢 Alive"}
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)

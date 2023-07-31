@@ -46,12 +46,10 @@ def ask_questions(question: str):
     answer = result['result']
     source_documents = result['source_documents']
 
-    return answer
-
-    # rows = set()
-    # for doc in source_documents:
-    #     rows.add(doc.metadata['row'])
-    # clauses = df.iloc[list(rows)]
-    # clauses = clauses[['Clause', 'Clause_Name']]
-    # clauses_dict = clauses.to_dict('records')
-    # return answer, clauses_dict
+    rows = set()
+    for doc in source_documents:
+        rows.add(doc.metadata['row'])
+    clauses = df.iloc[list(rows)]
+    clauses = clauses[['Clause', 'Clause_Name']]
+    clauses_dict = clauses.to_dict('records')
+    return answer, clauses_dict
